@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Tanımlama, Erişim ve Döngülerle Dizi Kullanımı/1.0.0": {
+        "runtime": {
+          "Tanımlama, Erişim ve Döngülerle Dizi Kullanımı.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Tanımlama, Erişim ve Döngülerle Dizi Kullanımı/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
