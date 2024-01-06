@@ -1,42 +1,46 @@
-﻿namespace Tanımlama__Erişim_ve_Döngülerle_Dizi_Kullanımı;
-
-class Program
+﻿namespace ArrayDeclarationAccessandLoops
 {
-    static void Main(string[] args)
-    {//Dizi Tanımlama//
-   /* string[] renkler = new string[5];//-->New string ile değer ataması yaptık
-    string[] hayvanlar = {"Kuş","Kedi","Köpek"};//--> Burada ise direkt olarak hayvanların atamasını yaptık
-    int[] dizi;
-    dizi = new int[5];//Diziye 5 değer ataması yaptık
-    //Dizilere Değer atama kısmı//
-    renkler[0] = "mavi";//Renkler dizisindeki "0"  a mavi ataması yaptık.
-    dizi[3] = 10;//Dizi kısmındaki 3.değere 10 ataması yaptık
-    renkler[1] ="kırmızı";
-    dizi[1] = 25;
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Array Declaration
+            /*string[] colors = new string[5];   // New string with size 5
+            string[] animals = { "Bird", "Cat", "Dog" };  // Direct assignment of values
+            int[] array;
+            array = new int[5];  // Array with size 5
 
-    Console.WriteLine(hayvanlar[1]);
-    Console.WriteLine(dizi[3]);
-    Console.WriteLine(renkler[0] + dizi[1]); //Renklerin 0'atanan değeri ile dizideki 1'atanan değeri yazdırdık*/
+            // Array Value Assignment
+            colors[0] = "blue";   // Assigning "blue" to index 0 in colors array
+            array[3] = 10;        // Assigning 10 to index 3 in array
+            colors[1] = "red";
+            array[1] = 25;
 
+            Console.WriteLine(animals[1]);       // Output: Cat
+            Console.WriteLine(array[3]);         // Output: 10
+            Console.WriteLine(colors[0] + array[1]);  // Output: blue25
+            */
 
+            Console.Write("Please enter the number of elements in the array: ");
+            int arrayLength = int.Parse(Console.ReadLine()!); // Prompt the user to enter the number of array elements
+            int[] numberArray = new int[arrayLength]; // Create an array with the specified length
 
-Console.Write("Lütfen dizinin eleman sayısını giriniz:");
-int diziUzunluğu = int.Parse(Console.ReadLine()!); //Kullanıcıdan dizi eleman sayısı girmesi için readline oluşturduk
-//ve dizi uzunluğu değerini kişinin gireceği değere eşitledik
-int[] sayiDizisi = new int[diziUzunluğu];//Burada ise newintdiziuzunluğu ile ekrandan alınan sayı ile boyutu belirledik
-//Dizinin elemanlarını konsoldan alabilmek için for kullacağınız
-for (int i = 0; i < diziUzunluğu; i++)
-{
-    Console.Write("Lütfen {0}. sayisi giriniz:", i+1);//i+1 kullanma sebebimiz kullanıcıya 
-    //0.sayıyı girmek mantıklı olmadığı için.
-    sayiDizisi[i] = int.Parse(Console.ReadLine()!);
+            // Loop to populate the array with user-input values
+            for (int i = 0; i < arrayLength; i++)
+            {
+                Console.Write("Please enter the {0}. number: ", i + 1); // i+1 is used because we don't want the user to enter the 0th number.
+                numberArray[i] = int.Parse(Console.ReadLine()!);
+            }
 
-}
-int toplam = 0;
-foreach (var sayi in sayiDizisi)//collection tip döngülerde geri dönmemizi sağlayan döngüydü
-{
-    toplam += sayi;
-}
- Console.WriteLine("Ortalama:" + toplam/diziUzunluğu);
+            int sum = 0;
+
+            // Calculate the sum of array elements using a foreach loop
+            foreach (var number in numberArray)
+            {
+                sum += number;
+            }
+
+            Console.WriteLine("Average: " + (sum / (double)arrayLength)); // Calculate and print the average of array elements
+        }
     }
 }
